@@ -1,0 +1,23 @@
+---
+Description: This template request an SSL Certificate.
+
+Parameters:
+
+  DomainName:
+    Type: String
+
+Resources:
+  AcmCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties: 
+      DomainName: !Ref DomainName
+      DomainValidationOptions: 
+        -   DomainName: !Ref DomainName
+            HostedZoneId: Z08903843S7UR8DXXOHQA
+      SubjectAlternativeNames: 
+        - "*.hachem.thecadors.com"
+      ValidationMethod: DNS 
+
+Outputs:
+  AcmCertificateArn:
+    Value: !Ref AcmCertificate
