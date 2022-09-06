@@ -125,9 +125,11 @@ Resources:
             #!/bin/bash -xe
             sudo su
             yum update -y
-            yum install -y httpd
-            echo "The cadors webiste" > /var/www/html/index.html
-            service httpd start
+            sudo yum install wget
+            wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
+            chmod +x ./install
+            sudo ./install auto
+            
 
   EC2Instance2:
     Type: AWS::EC2::Instance
@@ -147,9 +149,10 @@ Resources:
             #!/bin/bash -xe
             sudo su
             yum update -y
-            yum install -y httpd
-            echo "The cadors webiste" > /var/www/html/index.html
-            service httpd start
+            sudo yum install wget
+            wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
+            chmod +x ./install
+            sudo ./install auto
 
 Outputs:
 # Export Target Group
