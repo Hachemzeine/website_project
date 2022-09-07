@@ -128,6 +128,7 @@ Resources:
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
+            sudo service codedeploy-agent start
             
 
   EC2Instance2:
@@ -151,6 +152,7 @@ Resources:
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
+            sudo service codedeploy-agent start
 
 Outputs:
 # Export Target Group
