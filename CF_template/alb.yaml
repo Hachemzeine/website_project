@@ -122,12 +122,9 @@ Resources:
       UserData:
         Fn::Base64:
           !Sub |
-            #!/bin/bash -xe
-            sudo su
-            yum update -y
-            sudo yum install ruby
-            sudo yum install wget
-            cd /home/ec2-user
+            #!/bin/bash
+            sudo yum update -y 
+            sudo yum install wget ruby -y 
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
@@ -148,12 +145,9 @@ Resources:
       UserData:
         Fn::Base64:
           !Sub |
-            #!/bin/bash -xe
-            sudo su
-            yum update -y
-            sudo yum install ruby
-            sudo yum install wget
-            cd /home/ec2-user
+            #!/bin/bash
+            sudo yum update -y 
+            sudo yum install wget ruby -y 
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
