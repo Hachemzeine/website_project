@@ -123,12 +123,15 @@ Resources:
         Fn::Base64:
           !Sub |
             #!/bin/bash
-            sudo yum update -y 
-            sudo yum install wget ruby -y 
+            sudo apt-get update -y 
+            sudo apt-get install ruby -y
+            sudo apt-get install wget -y
+            cd /home/ec2-user 
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
-            sudo service codedeploy-agent start
+            service codedeploy-agent start
+            rm install
             
 
   EC2Instance2:
@@ -147,12 +150,15 @@ Resources:
         Fn::Base64:
           !Sub |
             #!/bin/bash
-            sudo yum update -y 
-            sudo yum install wget ruby -y 
+            sudo apt-get update -y 
+            sudo apt-get install ruby -y
+            sudo apt-get install wget -y
+            cd /home/ec2-user 
             wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/install
             chmod +x ./install
             sudo ./install auto
-            sudo service codedeploy-agent start
+            service codedeploy-agent start
+            rm install
 
 Outputs:
 # Export Target Group
